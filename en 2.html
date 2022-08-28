@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="icon" href="images/Logo1.jpeg"> 
+   <link rel="stylesheet" href="en2.css">
+   <!-- Google Fonts CDN Link -->
+   <link
+   href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+   rel="stylesheet"
+ />
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Bangi</title>
+</head>
+<body onload="intClock()"> 
+    
+<!---cloock-->    
+
+<div class="datetime">
+    <button class="siu" onclick="DAY.play();">
+    <div class="date">
+        
+        <span>Today is </span>
+        <span id="dayname">Day</span>
+        <span id="minutes">00</span>:<span id="Seconds">00</span>:<span id="hundredths">00</span>
+        <script>
+            const DAY = new Audio();
+            DAY.src = "images/Saterday.mp3"
+        </script>
+    </button>
+    </div>
+</div>
+    <script>
+ 
+      function updateClock(){
+          var now = new Date();
+          var dname = now.getDay();
+
+          var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+          var ids = ["dayname"];
+          var values = [week[dname]];
+          for(var i = 0; i < ids.length; i++)
+          document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+      }
+
+      function intClock(){
+        updateClock();
+        window.setInterval("updateClock()", 1)
+      }
+
+      /*
+
+      class state {
+          constructor(startTimestamp, difference, suspended) {
+              this.startTimestamp = startTimestamp;
+              this.difference = difference;
+              this.suspended = suspended;
+          }
+          static ready() {
+          return new state(null, 0, 0);
+      }
+      }
+
+      class stopwatch {
+          constructor(state) {
+              this.state = state;
+              this.requestAnimationId = null;
+              this.handleClickStart = this.handleClickStart.bind(this);
+              document
+              .getElementById("start")
+              .addEventListener("click", this.handleClickStart); 
+              this.handleClickStop = this.handleClickStart.bind(this);
+              document
+              .getElementById("stop")
+              .addEventListener("click", this.handleClickStart); 
+              this.handleClickReset = this.handleClickStart.bind(this);
+              document
+              .getElementById("reset")
+              .addEventListener("click", this.handleClickStart); 
+              this.tick = this.tick bind(this);
+              this.render;
+          }
+
+          static ready() {
+              return new stopwatch(state.ready());
+          }
+
+          setState(newState) {
+              this.state = { ...this.state, ...newState};
+              this.render();
+          }
+          tick(){
+              this.setState({
+                  difference: newDate(new Date() - this.state.startTimestamp)
+              });
+              this.requestAnimationId = requestAnimationFrame(this.tick);
+          }
+          handleClickStart() {
+              if (this.state.startTimestamp) {
+                  return;
+              }
+              this.setState({
+                  startTimestamp: new Date() - this.state.suspended,
+                  suspended: 0
+              })
+              this.requestAnimationId = requestAnimationFrame(this.tick);
+          }
+          handleClickStop() {
+              cancelAnimationFrame(this.requestAnimationId);
+              this.setState({
+                  startTimestamp: null,
+                  suspended: this.state.difference
+              });
+          }
+
+          handleClickRest() {
+             cancelAnimationFrame(this.requestAnimationId);
+             this.setState(state.ready());
+          }
+          render() {
+              const {difference} = this.state;
+              const seconds = (difference ? Math.floor(difference.getSeconds()) : 0) .toString().padStart(2, "0");
+              const minutes= (difference ? Math.floor(difference.getMinutes()) : 0) .toString().padStart(2, "0");
+              .document.getElementById("minutes").textContent = minutes;
+              .document.getElementById("seconds").textContent = seconds;
+              .document.getElementById("hundredths").textContent = hundredths;
+              const hundredths = (difference ? Math.floor(difference.getMilliseconds()) : 0) .toString().padStart(2, "0");
+          }
+      }
+      */
+
+
+      
+
+    </script>
+
+<!--Letters-->
+
+    <section class="cards" id="services">
+        <h2 class="title">Level B</h2>
+        <h3 class="title1">Words :</h3>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/aaaa.jpg" alt=""></i>
+                    <i><h1>Apple</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="APPLE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const APPLE = new Audio();
+                    APPLE.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/banana.jpg" alt=""></i>
+                    <i><h3>Banana</h3></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="BANANA.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const BANANA = new Audio();
+                    BANANA.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/carrot.jpg" alt=""></i>
+                    <i><h1>Carrot</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="CARROT.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const CARROT = new Audio();
+                    CARROT.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/donat.png" alt=""></i>
+                    <i><h1>Donut</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="DONUT.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const DONUT = new Audio();
+                    DONUT.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/earth.jpg" alt=""></i>
+                    <i><h1>Earth</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="EARTH.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const EARTH = new Audio();
+                    EARTH.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/fish.jpg" alt=""></i>
+                    <i><h1>Fish</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="FISH.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const FISH = new Audio();
+                    FISH.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/glase.jpg" alt=""></i>
+                    <i><h1>Grape</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="GRAPE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const GRAPE = new Audio();
+                    GRAPE.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/horse.jpeg" alt=""></i>
+                    <i><h1>Horse</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="HORSE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const HORSE = new Audio();
+                    HORSE.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/ice.jpg" alt=""></i>
+                    <i><h1>ice</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="ICE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const ICE = new Audio();
+                    ICE.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/juice.jpg" alt=""></i>
+                    <i><h1>juice</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="JUICE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const JUICE = new Audio();
+                    JUICE.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/key.png" alt=""></i>
+                    <i><h1>Key</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="KEY.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const KEY = new Audio();
+                    KEY.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/lion.jpg" alt=""></i>
+                    <i><h1>Lion</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="LION.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const LION = new Audio();
+                    LION.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/mouse.png" alt=""></i>
+                    <i><h1>Mouse</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="MOUSE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const MOUSE = new Audio();
+                    MOUSE.src = "images/havoc.mp3"
+                </script>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/notes.png" alt=""></i>
+                    <i><h1>Note</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="NOTE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const NOTE = new Audio();
+                    NOTE.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/owl.png" alt=""></i>
+                    <i><h1>Owl</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="OWL.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const OWL = new Audio();
+                    OWL.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/pen.jpg" alt=""></i>
+                    <i><h1>Pen</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="PEN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const PEN = new Audio();
+                    PEN.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/queen.jpg" alt=""></i>
+                    <i><h1>Queen</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="QUEEN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const QUEEN = new Audio();
+                    QUEEN.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/rabbit.webp" alt=""></i>
+                    <i><h1>Rabbit</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="RABBIT.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const RABBIT = new Audio();
+                    RABBIT.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/sun.jpg" alt=""></i>
+                    <i><h1>Sun</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="SUN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const SUN = new Audio();
+                    SUN.src = "images/havoc.mp3"
+                </script>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/tooth.jpg" alt=""></i>
+                    <i><h1>Tooth</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="TOOTH.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const TOOTH = new Audio();
+                    TOOTH.src = "images/havoc.mp3"
+                </script>
+            </div>
+            
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/urn.jpg" alt=""></i>
+                    <i><h1>Urn</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="URN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const URN = new Audio();
+                    URN.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/van.jpg" alt=""></i>
+                    <i><h1>Van</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="VAN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const VAN = new Audio();
+                    VAN.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/wheel.jpg" alt=""></i>
+                    <i><h1>Wheel</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="WHEEL.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const WHEEL = new Audio();
+                    WHEEL.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/xray.jpg" alt=""></i>
+                    <i><h1>Xray</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="XRAY.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const XRAY = new Audio();
+                    XRAY.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/yarn.jpg" alt=""></i>
+                    <i><h1>Yarn</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="YARN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const YARN = new Audio();
+                    YARN.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i><img src="/images/zebra.jpg" alt=""></i>
+                    <i><h1>Zebra</h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton" onclick="ZEBRA.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const ZEBRA = new Audio();
+                    ZEBRA.src = "images/havoc.mp3"
+                </script>
+            </div>
+            
+    
+        </div>
+    
+    </section>
+
+
+
+    <section class="cards" id="services">
+        <h2 class="title"></h2>
+        <h3 class="title1">Numbers :</h3>
+        <section class="content">
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>1</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="ONE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const ONE = new Audio();
+                    ONE.src = "images/1.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>2</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="TWO.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const TWO = new Audio();
+                    TWO.src = "images/2.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>3</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="THERE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const THERE = new Audio();
+                    THERE.src = "images/3.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>4</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="FOUR.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const FOUR = new Audio();
+                    FOUR.src = "images/4.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>5</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="FIVE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const FIVE = new Audio();
+                    FIVE.src = "images/5.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>6</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="SEX.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const SEX = new Audio();
+                    SEX.src = "images/6.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>7</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="SEVEN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const SEVEN = new Audio();
+                    SEVEN.src = "images/7.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>8</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="AYT.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const AYT = new Audio();
+                    AYT.src = "images/8.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>9</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="NYN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const NYN = new Audio();
+                    NYN.src = "images/9.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>10</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="TEN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const TEN = new Audio();
+                    TEN.src = "images/10.mp3"
+                </script>
+            </div>
+
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>11</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="ELEVE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const ELEVE = new Audio();
+                    ELEVE.src = "images/11.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>12</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="TWEL.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const TWEL = new Audio();
+                    TWEL.src = "images/12.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>13</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="THERTY.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const THERTY = new Audio();
+                   THERTY.src = "images/13.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>14</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="FORTY.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const FORTY = new Audio();
+                   FORTY.src = "images/14.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>15</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="FITH.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const FITH = new Audio();
+                   FITH.src = "images/15.mp3"
+                </script>
+    
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>16</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="SEXTY.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const SEXTY = new Audio();
+                   SEXTY.src = "images/16.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>17</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="SEVENTY.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const SEVENTY = new Audio();
+                   SEVENTY.src = "images/17.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>18</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="AYTY.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const AYTY = new Audio();
+                   AYTY.src = "images/18.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>19</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="NINTY.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const NINTY = new Audio();
+                   NINTY.src = "images/19.mp3"
+                </script>
+            </div>
+            <div class="car">
+                <div class="iconn">
+                    <i><h1>20</h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn" onclick="TWENY.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const TWENY = new Audio();
+                   TWENY.src = "images/20.mp3"
+                </script>
+            </div>
+     </section>
+    </section>
+        
+            
+    <section class="cards" id="services">
+        <h2 class="title"></h2>
+        <h3 class="title1">colors :</h3>
+        <section class="content">
+            <div class="card-red">
+                <div class="iconnnn">
+                    <i><h1></h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton-red" onclick="RED.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const RED = new Audio();
+                    RED.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card-orange">
+                <div class="iconnn">
+                    <i><h1></h1></i>
+                </div>
+                <div class="info">
+                    <button class="botton-orange" onclick="ORANGE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const ORANGE = new Audio();
+                    ORANGE.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card-yellow">
+                <div class="iconnn">
+                    <i><h1></h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn-yellow" onclick="YELLOW.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const YELLOW = new Audio();
+                    YELLOW.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card-green">
+                <div class="iconnn">
+                    <i><h1></h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn-green" onclick="GREEN.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const GREEN = new Audio();
+                    GREEN.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card-blue">
+                <div class="iconnn">
+                    <i><h1></h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn-blue" onclick="BLUE.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const BLUE = new Audio();
+                    BLUE.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card-pink">
+                <div class="iconnn">
+                    <i><h1></h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn-pink" onclick="PINK.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const PINK = new Audio();
+                    PINK.src = "images/havoc.mp3"
+                </script>
+            </div>
+            <div class="card-black">
+                <div class="iconnn">
+                    <i><h1></h1></i>
+                </div>
+                <div class="info">
+                    <button class="bottonn-black" onclick="BLACK.play();"><i class="fa-solid fa-volume-high"></i></button>
+    
+                </div>
+                <script>
+                    const BLACK = new Audio();
+                    BLACK.src = "images/havoc.mp3"
+                </script>
+            </div>
+
+                        <div class="card-white">
+                            <div class="iconnn">
+                                <i><h1></h1></i>
+                            </div>
+                            <div class="info">
+                                <button class="bottonn-white" onclick="WHITE.play();"><i class="fa-solid fa-volume-high"></i></button>
+                
+                            </div>
+                            <script>
+                                const WHITE = new Audio();
+                                WHITE.src = "images/havoc.mp3"
+                            </script>
+                        </div>
+
+                        <div class="card-purple">
+                            <div class="iconnn">
+                                <i><h1></h1></i>
+                            </div>
+                            <div class="info">
+                                <button class="bottonn-purple" onclick="PURPLE.play();"><i class="fa-solid fa-volume-high"></i></button>
+                
+                            </div>
+                            <script>
+                                const PURPLE = new Audio();
+                                PURPLE.src = "images/havoc.mp3"
+                            </script>
+                        </div>
+
+                        <div class="card-brown">
+                            <div class="iconnn">
+                                <i><h1></h1></i>
+                            </div>
+                            <div class="info">
+                                <button class="bottonn-brown" onclick="BROWN.play();"><i class="fa-solid fa-volume-high"></i></button>
+                
+                            </div>
+                            <script>
+                                const BROWN = new Audio();
+                                BROWN.src = "images/havoc.mp3"
+                            </script>
+                        </div>
+            
+                    
+                </section>
+            </section>   
+            
+        
+    
+            <section class="cardsd">
+                <h2 class="title"></h2>
+                <h3 class="title1">Shapes :</h3>
+                <section class="contentt">
+                    <div class="carde">
+                        <div class="iconnnn">
+                            <i><h1></h1></i>
+                        </div>
+                        <div class="info">
+                            <button class="bottonn-bluee" onclick="BLUEE.play();"><i class="fa-solid fa-volume-high"></i></button>
+            
+                        </div>
+                        <script>
+                            const BLUEE = new Audio();
+                            BLUEE.src = "images/havoc.mp3"
+                        </script>
+                    </div>
+                    <div class="cardee">
+                        <div class="iconnn">
+                            <i><h1></h1></i>
+                        </div>
+                        <div class="info">
+                            <button class="botton-redd" onclick="REDD.play();"><i class="fa-solid fa-volume-high"></i></button>
+            
+                        </div>
+                        <script>
+                            const REDD = new Audio();
+                            REDD.src = "images/havoc.mp3"
+                        </script>
+                    </div>
+                    <div class="cardeee">
+                        <div class="iconnn">
+                            <i><h1></h1></i>
+                        </div>
+                        <div class="info">
+                            <button class="bottonn-yelloww" onclick="YELLOWW.play();"><i class="fa-solid fa-volume-high"></i></button>
+            
+                        </div>
+                        <script>
+                            const YELLOWW = new Audio();
+                            YELLOWW.src = "images/havoc.mp3"
+                        </script>
+                    </div>
+
+                            <div class="cardeeee">
+                                <div class="iconnnn">
+                                    <i><h1></h1></i>
+                                </div>
+                                <div class="info">
+                                    <button class="bottonn-pinkk" onclick="PINKK.play();"><i class="fa-solid fa-volume-high"></i></button>
+                    
+                                </div>
+                                <script>
+                                    const PINKK = new Audio();
+                                    PINKK.src = "images/havoc.mp3"
+                                </script>
+                            </div>
+                            <div class="cardeeeee">
+                                <div class="iconnn">
+                                    <i><h1></h1></i>
+                                </div>
+                                <div class="info">
+                                    <button class="bottonn-blackk" onclick="BLACKK.play();"><i class="fa-solid fa-volume-high"></i></button>
+                    
+                                </div>
+                                <script>
+                                    const BLACKK = new Audio();
+                                    BLACKK.src = "images/havoc.mp3"
+                                </script>
+                            </div>
+
+                        </section>
+                        </section>
+
+                        
+                    
+                            <div class="container">
+                                <div class="btn"><a href="en 3.html">Level 3</a></div>
+                                <div class="btn"><a href="home.html">Home</a></div>
+                            </div>
+
+</body>                            
